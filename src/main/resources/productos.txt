@@ -1,0 +1,5 @@
+<Musica>-<"A dios le pido",1000.0,94,"Juanes","Pop">
+<Musica>-<"Shape of You",1200.0,50,"Ed Sheeran","Pop">
+<Musica>-<"Blinding Lights",1500.0,75,"The Weeknd","Synthwave">
+<Musica>-<"Bohemian Rhapsody",800.0,200,"Queen","Rock">
+<Musica>-<"Rolling in the Deep",1100.0,89,"Adele","Soul">
