@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class Tienda implements Serializable {
 
@@ -130,12 +129,12 @@ public class Tienda implements Serializable {
         Set<String> productosAEscribir = new HashSet<>();
 
         for (Producto producto : productosTienda) {
-            if(producto.getClass().getSimpleName().equals(tipoProducto)) {
+            if(producto.getClass().getSimpleName().equalsIgnoreCase(tipoProducto)) {
                 productosAEscribir.add(producto.mostrarDetalles());
             }
         }
 
-        Files.write(Path.of("productos.txt"), productosAEscribir);
+        Files.write(Path.of("./src/main/resources/productos.txt"), productosAEscribir);
 
     }
 

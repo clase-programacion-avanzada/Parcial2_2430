@@ -106,12 +106,5 @@ public class Main {
             .forEach(producto -> System.out.println(producto.getTitulo()));
 
 
-
-
-
-
-
-
-
     }
 }

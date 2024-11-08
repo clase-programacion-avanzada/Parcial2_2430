@@ -40,3 +40,6 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+./src/main/resources/inventario.bin
+./src/main/resources/productos.txt
