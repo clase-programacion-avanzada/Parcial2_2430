@@ -1,0 +1,66 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+abstract class Producto {
+    - cantidad: int
+    - precio: double
+    - titulo: String
+
+    + Producto(cantidad: int, precio: double, titulo: String)
+    + {abstract} mostrarDetalles(): String
+
+}
+
+class Pelicula  {
+    - clasificacion: String
+
+    + Pelicula(cantidad: int, precio: double, titulo: String, clasificacion: String)
+    + mostrarDetalles(): String
+}
+
+class Musica {
+    - artista: String
+    - genero: String
+
+    + Musica(cantidad: int, precio: double, titulo: String, artista: String, genero: String)
+    + mostrarDetalles(): String
+}
+
+class Compra {
+    - fecha: LocalDate
+
+    + Compra(fecha: LocalDate)
+    + agregarProducto(titulo: String, cantidad: int, tienda: Tienda): int
+    + removerElementosPorClasificacion(clasificacion: String, usuario:Usuario): List<Producto>
+
+}
+
+class Usuario {
+   - email: String
+   - fechaNacimiento: LocalDate
+   - nombre: String
+
+    + Usuario(email: String, fechaNacimiento: LocalDate, nombre: String)
+    + agregarProductosCompra(titulo: String, cantidad: int): void
+    + calcularEdad(): int
+}
+
+class Tienda {
+    + agregarUsuario(email: String, fechaNacimiento: LocalDate, nombre: String): void
+    + buscarProducto(titulo: String): Producto
+    + generarReporteCompras(tipoProducto: String): void
+    + guardarInventario(): void
+}
+
+' Relaciones
+skinparam groupInheritance 1
+Pelicula --|> Producto
+Musica --|> Producto
+
+Usuario "1" -right> "1" Compra : compra
+Compra "1" -up-> "*" Producto : productosCompra
+Tienda "1" -down-> "*" Usuario : usuarios
+Usuario "1" -up-> "1" Tienda : tienda
+Tienda "1" *-> "*" Producto : productosTienda
+
+@enduml
