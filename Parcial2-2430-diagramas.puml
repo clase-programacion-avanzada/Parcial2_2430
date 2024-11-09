@@ -40,7 +40,7 @@ class Usuario {
    - fechaNacimiento: LocalDate
    - nombre: String
 
-    + Usuario(email: String, fechaNacimiento: LocalDate, nombre: String)
+    + Usuario(email: String, fechaNacimiento: LocalDate, nombre: String, tienda: Tienda)
     + agregarProductosCompra(titulo: String, cantidad: int): void
     + calcularEdad(): int
 }
