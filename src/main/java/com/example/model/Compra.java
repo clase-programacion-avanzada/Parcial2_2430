@@ -104,7 +104,17 @@ public class Compra implements Serializable {
                 .filter(esClasificacionRequerida)
                 .toList();
 
-        productosCompra = productosActualizados;
+        //Usando removeIf
+        /*
+        productosCompra.removeIf(producto -> producto instanceof Pelicula pelicula
+            && !pelicula.getClasificacion().equals("A")
+            && edadUsuario < pelicula.getEdadClasificacion(pelicula.getClasificacion()));
+
+         */
+
+
+        productosCompra.clear();
+        productosCompra.addAll(productosActualizados);
 
         return productosActualizados;
 
