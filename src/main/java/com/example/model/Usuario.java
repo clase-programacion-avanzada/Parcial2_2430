@@ -50,17 +50,6 @@ public class Usuario implements Serializable {
         return nombre;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public int calcularEdad() {
 
@@ -79,12 +68,4 @@ public class Usuario implements Serializable {
 
     }
 
-    public Set<String> getProductosCompradosPorTipo(String tipoProducto) {
-
-        return getCompra().getDetallesProductosPorTipo(tipoProducto);
-    }
-
-    public void setTienda(Tienda tienda) {
-        this.tienda = tienda;
-    }
 }

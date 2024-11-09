@@ -68,7 +68,6 @@ public class Compra implements Serializable {
 
         producto.reducirCantidad(cantidad);
 
-
         return producto.getCantidad();
 
     }
@@ -87,7 +86,6 @@ public class Compra implements Serializable {
 
         List<Producto> productosActualizados = new ArrayList<>();
 
-        
 
         for (Producto producto : productosCompra) {
             if(!(producto instanceof Pelicula pelicula)
@@ -96,7 +94,6 @@ public class Compra implements Serializable {
             ) {
                     productosActualizados.add(producto);
             }
-
         }
 
         //Usando streams

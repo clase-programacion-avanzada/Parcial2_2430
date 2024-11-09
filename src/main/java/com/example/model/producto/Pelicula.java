@@ -36,6 +36,6 @@ public class Pelicula extends Producto {
      */
     @Override
     public String mostrarDetalles() {
-        return "<Pelicula>" + "-<\"" + getTitulo() + "\"," + getPrecio() + "," + getCantidad() + ",\"" + clasificacion + "\">";
+        return "<Pelicula>" + "-<\"" + getTitulo() + "\",$" + getPrecio() + "," + getCantidad() + ",\"" + clasificacion + "\">";
     }
 }

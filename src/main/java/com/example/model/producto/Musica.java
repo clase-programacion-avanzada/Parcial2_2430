@@ -32,6 +32,6 @@ public class Musica extends Producto {
      */
     @Override
     public String mostrarDetalles() {
-        return "<Musica>" + "-<\"" + getTitulo() + "\"," + getPrecio() + "," + getCantidad() + ",\"" + artista + "\",\"" + genero + "\">";
+        return "<Musica>" + "-<\"" + getTitulo() + "\",$" + getPrecio() + "," + getCantidad() + ",\"" + artista + "\",\"" + genero + "\">";
     }
 }

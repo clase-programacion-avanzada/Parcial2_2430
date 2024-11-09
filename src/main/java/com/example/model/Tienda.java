@@ -126,7 +126,7 @@ public class Tienda implements Serializable {
      */
     public void generarReporteCompras(String tipoProducto) throws IOException {
 
-        Set<String> productosAEscribir = new HashSet<>();
+        List<String> productosAEscribir = new ArrayList<>();
 
         for (Producto producto : productosTienda) {
             if(producto.getClass().getSimpleName().equalsIgnoreCase(tipoProducto)) {
@@ -134,19 +134,14 @@ public class Tienda implements Serializable {
             }
         }
 
+        //Usando streams
+        List<String> productosAEscribir2 = productosTienda.stream()
+                .filter(producto -> producto.getClass().getSimpleName().equalsIgnoreCase(tipoProducto))
+                .map(Producto::mostrarDetalles)
+                .toList();
+
         Files.write(Path.of("./src/main/resources/productos.txt"), productosAEscribir);
 
     }
 
-
-    public void reducirInventario(String titulo, int cantidad) {
-
-        Producto producto = buscarProducto(titulo);
-
-        int cantidadActual = producto.getCantidad();
-
-        producto.reducirCantidad(cantidad);
-
-
-    }
 }
