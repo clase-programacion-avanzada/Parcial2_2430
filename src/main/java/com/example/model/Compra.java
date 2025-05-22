@@ -64,9 +64,9 @@ public class Compra implements Serializable {
             throw new IllegalArgumentException("El producto no existe");
         }
 
-        productosCompra.add(producto);
-
         producto.reducirCantidad(cantidad);
+
+        productosCompra.add(producto);
 
         return producto.getCantidad();
 
